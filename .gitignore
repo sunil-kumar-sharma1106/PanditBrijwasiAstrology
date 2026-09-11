@@ -2,23 +2,31 @@
 __pycache__/
 *.py[cod]
 *$py.class
+*.so
 
-# Virtual environment
+# Virtual environments
 env/
 venv/
 .venv/
+ENV/
+env.bak/
+venv.bak/
 
 # Environment variables / secrets
 .env
 .env.*
+.envrc
 
 # Django
+*.log
+local_settings.py
 db.sqlite3
+db.sqlite3-journal
 
 # Media files
 media/
 
-# Static collected files
+# Collected static files
 staticfiles/
 
 # IDE
@@ -28,3 +36,109 @@ staticfiles/
 # OS files
 .DS_Store
 Thumbs.db
+
+# Python packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# PyInstaller
+*.manifest
+*.spec
+
+# Testing / coverage
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+.pytest_cache/
+.hypothesis/
+
+# Jupyter
+.ipynb_checkpoints
+
+# Pytest / mypy / type checkers
+.mypy_cache/
+.dmypy.json
+dmypy.json
+.pyre/
+.pytype/
+.pytest_cache/
+
+# Pylance / Python tools
+.pyright/
+
+# Temporary files
+tempCodeRunnerFile.py
+
+# Ruff
+.ruff_cache/
+
+# PyCharm / JetBrains
+.idea/
+
+# Spyder
+.spyderproject
+.spyproject
+
+# Rope
+.ropeproject
+
+# Sphinx
+docs/_build/
+
+# MkDocs
+/site
+
+# pyenv
+.python-version
+
+# PDM
+.pdm-python
+.pdm-build/
+
+# Pixi
+.pixi
+
+# PEP 582
+__pypackages__/
+
+# Celery
+celerybeat-schedule
+celerybeat.pid
+
+# Redis
+*.rdb
+*.aof
+*.pid
+
+# RabbitMQ
+mnesia/
+rabbitmq/
+rabbitmq-data/
+
+# ActiveMQ
+activemq-data/
+
+# Streamlit secrets
+.streamlit/secrets.toml
