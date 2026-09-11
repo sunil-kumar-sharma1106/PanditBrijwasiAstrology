@@ -1,0 +1,105 @@
+{% extends "astrology/base.html" %}
+
+{% block title %}
+Create Account | Pandit Brijwasi Prasad Tiwari
+{% endblock %}
+
+{% block content %}
+
+<section class="rashifal-detail">
+
+    <div class="container">
+
+        <span class="section-label">
+            ✦ CREATE ACCOUNT ✦
+        </span>
+
+        <h2>
+            Join Our Astrology Platform
+        </h2>
+
+        <div class="rashifal-content">
+
+            {% if messages %}
+                {% for message in messages %}
+                    <p style="margin-bottom:15px;">
+                        {{ message }}
+                    </p>
+                {% endfor %}
+            {% endif %}
+
+            <form method="POST">
+
+                {% csrf_token %}
+
+                <div style="margin-bottom:20px;">
+                    <label>Username</label>
+
+                    <input
+                        type="text"
+                        name="username"
+                        required
+                        style="width:100%; padding:12px; margin-top:8px;"
+                    >
+                </div>
+
+                <div style="margin-bottom:20px;">
+                    <label>Email</label>
+
+                    <input
+                        type="email"
+                        name="email"
+                        style="width:100%; padding:12px; margin-top:8px;"
+                    >
+                </div>
+
+                <div style="margin-bottom:20px;">
+                    <label>Password</label>
+
+                    <input
+                        type="password"
+                        name="password"
+                        required
+                        style="width:100%; padding:12px; margin-top:8px;"
+                    >
+                </div>
+
+                <div style="margin-bottom:20px;">
+                    <label>Confirm Password</label>
+
+                    <input
+                        type="password"
+                        name="confirm_password"
+                        required
+                        style="width:100%; padding:12px; margin-top:8px;"
+                    >
+                </div>
+
+                <button
+                    type="submit"
+                    class="btn btn-primary"
+                    style="border:none; cursor:pointer;"
+                >
+                    ✨ Create Account
+                </button>
+
+            </form>
+
+            <p style="margin-top:25px;">
+                Already have an account?
+            </p>
+
+            <a
+                href="{% url 'login' %}"
+                class="btn btn-secondary"
+            >
+                Login →
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+{% endblock %}

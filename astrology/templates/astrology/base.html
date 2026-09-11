@@ -1,0 +1,141 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>{% block title %}Acharya Brijwasi Prasad Tiwari{% endblock %}</title>
+
+    <meta
+        name="description"
+        content="Achrya Brijwasi Prasad Tiwari - Vedic Astrology, Kundli, Rashifal, Jyotish Consultation and Astrology Services."
+    >
+
+    <link
+        rel="stylesheet"
+        href="{% static 'astrology/css/style.css' %}"
+    >
+</head>
+
+<body>
+ <!-- Premium Cursor -->
+  
+     <div class="premium-cursor"></div>
+    <div class="premium-cursor-glow"></div>
+
+    <!-- =========================
+         HEADER
+    ========================== -->
+
+    <header class="site-header">
+
+        <div class="container">
+
+            <a href="/" class="brand">
+                <span class="brand-symbol">ॐ</span>
+
+                <div>
+                    <h1>Acharya Brijwasi Prasad Tiwari</h1>
+                    <span>Vedic Astrology & Jyotish</span>
+                </div>
+            </a>
+
+            <nav class="main-nav">
+
+    <a href="{% url 'home' %}">
+        Home
+    </a>
+
+    <a href="{% url 'home' %}">
+        Rashifal
+    </a>
+
+    <a href="{% url 'premium_plans' %}">
+        Premium
+    </a>
+
+    <a
+        href="https://wa.me/919589675702?text=Namaste%20Pandit%20Ji%2C%20mujhe%20Jyotish%20Consultation%20book%20karni%20hai."
+        target="_blank"
+        rel="noopener noreferrer"
+    >
+        🔮 Consultation
+    </a>
+
+    <a href="tel:+916266398219">
+        📞 Contact
+    </a>
+
+    {% if user.is_authenticated %}
+
+        <a href="{% url 'dashboard' %}">
+            Dashboard
+        </a>
+
+        <form method="post" action="{% url 'logout' %}" style="display: inline;">
+    {% csrf_token %}
+
+    <button type="submit" class="nav-logout">
+        Logout
+    </button>
+</form>
+
+    {% else %}
+
+        <a href="{% url 'login' %}">
+            Login
+        </a>
+
+    {% endif %}
+
+</nav>
+
+        </div>
+
+    </header>
+
+
+    <!-- =========================
+         MAIN CONTENT
+    ========================== -->
+
+    <main>
+
+        {% block content %}
+
+        {% endblock %}
+
+    </main>
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer class="site-footer">
+
+        <div class="container">
+
+            <h2>Acharya Brijwasi Prasad Tiwari</h2>
+
+            <p>
+                Vedic Astrology • Jyotish • Kundli • Guidance
+            </p>
+
+            <p class="copyright">
+                © 2026 Pandit Brijwasi Prasad Tiwari.
+                All Rights Reserved.
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <script src="{% static 'astrology/js/script.js' %}"></script>
+
+</body>
+</html>

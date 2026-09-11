@@ -1,0 +1,102 @@
+{% extends "astrology/base.html" %}
+
+{% block title %}
+Numerology | Pandit Brijwasi Prasad Tiwari
+{% endblock %}
+
+{% block content %}
+
+<section class="rashifal-detail">
+
+    <div class="container">
+
+        <span class="section-label">
+            ✦ NUMEROLOGY ✦
+        </span>
+
+        <h2>
+            🔢 Numerology
+        </h2>
+
+        <p>
+            Discover the traditional significance associated
+            with numbers and birth dates.
+        </p>
+
+        <div class="premium-card">
+
+            <h3>
+                ✦ Numerology Guidance
+            </h3>
+
+            <p>
+                Explore traditional numerological perspectives
+                based on your date of birth and understand the
+                significance associated with important numbers.
+            </p>
+
+            <div class="kundli-form">
+
+                <div class="form-group">
+                    <label for="numerology_name">
+                        Full Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="numerology_name"
+                        name="numerology_name"
+                        placeholder="Enter your full name"
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="numerology_birth_date">
+                        Birth Date
+                    </label>
+
+                    <input
+                        type="date"
+                        id="numerology_birth_date"
+                        name="numerology_birth_date"
+                    >
+                </div>
+
+                <button type="button" class="premium-button">
+                    🔢 Explore Numerology
+                </button>
+
+            </div>
+
+        </div>
+
+        <div class="premium-card">
+
+            <h3>
+                ✨ Premium Numerology Insights
+            </h3>
+
+            <p>
+                Unlock deeper traditional numerology insights
+                related to personality, important numbers,
+                career and life patterns.
+            </p>
+
+            <a
+                href="{% url 'premium_plans' %}"
+                class="premium-button"
+            >
+                ✨ Unlock Premium Guidance
+            </a>
+
+        </div>
+
+        <a href="{% url 'home' %}" class="back-link">
+            ← Back to Home
+        </a>
+
+    </div>
+
+</section>
+
+{% endblock %}

@@ -1,0 +1,804 @@
+
+{% extends "astrology/base.html" %}
+{% load static %}
+{% block title %}
+Home | Acharya Brijwasi Prasad Tiwari Ji Maharaj
+{% endblock %}
+
+{% block content %}
+
+<!-- HERO -->
+
+<section class="hero">
+
+    <div class="container">
+
+        <span class="hero-badge">
+            ✨ VEDIC ASTROLOGY ✨
+        </span>
+
+        <h2>
+            Discover What Your
+            <span>Stars</span>
+            Say About You
+        </h2>
+
+        <p>
+            Explore the wisdom of Vedic Astrology,
+            understand your cosmic journey,
+            and discover meaningful guidance for life.
+        </p>
+
+        <div class="hero-buttons">
+
+            <a href="#" class="btn btn-primary">
+                🔮 Get Your Kundli
+            </a>
+
+            <a href="#" class="btn btn-secondary">
+                Consult Pandit Ji
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ZODIAC SECTION -->
+
+<section class="zodiac-section">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <span class="section-label">
+                ✦ THE ZODIAC ✦
+            </span>
+
+            <h2>
+                Explore Your Zodiac Sign
+            </h2>
+
+            <p>
+                Discover the celestial qualities and cosmic energy
+                associated with your zodiac sign.
+            </p>
+
+        </div>
+
+
+        <div class="zodiac-grid">
+
+            <a href="{% url 'rashifal_detail' zodiac='aries' %}" class="zodiac-card">
+                <span class="zodiac-symbol">♈</span>
+                <h3>Aries <span>(मेष)</span></h3>
+                <p>Mar 21 – Apr 19</p>
+                <span class="card-link">Explore Rashifal →</span>
+            </a>
+
+
+            <a href="{% url 'rashifal_detail' zodiac='taurus' %}" class="zodiac-card">
+                <span class="zodiac-symbol">♉</span>
+                <h3>Taurus <span>(वृषभ)</span></h3>
+                <p>Apr 20 – May 20</p>
+                <span class="card-link">Explore Rashifal →</span>
+            </a>
+
+
+            <a href="{% url 'rashifal_detail' zodiac='gemini' %}" class="zodiac-card">
+                <span class="zodiac-symbol">♊</span>
+                <h3>Gemini <span>(मिथुन)</span></h3>
+                <p>May 21 – Jun 20</p>
+                <span class="card-link">Explore Rashifal →</span>
+            </a>
+
+
+            <a href="{% url 'rashifal_detail' zodiac='cancer' %}" class="zodiac-card">
+                <span class="zodiac-symbol">♋</span>
+                <h3>Cancer <span>(कर्क)</span></h3>
+                <p>Jun 21 – Jul 22</p>
+                <span class="card-link">Explore Rashifal →</span>
+            </a>
+
+
+            <a href="{% url 'rashifal_detail' zodiac='leo' %}" class="zodiac-card">
+                <span class="zodiac-symbol">♌</span>
+                <h3>Leo <span>(सिंह)</span></h3>
+                <p>Jul 23 – Aug 22</p>
+                <span class="card-link">Explore Rashifal →</span>
+            </a>
+
+
+            <a href="{% url 'rashifal_detail' zodiac='virgo' %}" class="zodiac-card">
+                <span class="zodiac-symbol">♍</span>
+                <h3>Virgo <span>(कन्या)</span></h3>
+                <p>Aug 23 – Sep 22</p>
+                <span class="card-link">Explore Rashifal →</span>
+            </a>
+
+
+            <a href="{% url 'rashifal_detail' zodiac='libra' %}" class="zodiac-card">
+                <span class="zodiac-symbol">♎</span>
+                <h3>Libra <span>(तुला)</span></h3>
+                <p>Sep 23 – Oct 22</p>
+                <span class="card-link">Explore Rashifal →</span>
+            </a>
+
+
+            <a href="{% url 'rashifal_detail' zodiac='scorpio' %}" class="zodiac-card">
+                <span class="zodiac-symbol">♏</span>
+                <h3>Scorpio <span>(वृश्चिक)</span></h3>
+                <p>Oct 23 – Nov 21</p>
+                <span class="card-link">Explore Rashifal →</span>
+            </a>
+
+
+            <a href="{% url 'rashifal_detail' zodiac='sagittarius' %}" class="zodiac-card">
+                <span class="zodiac-symbol">♐</span>
+                <h3>Sagittarius <span>(धनु)</span></h3>
+                <p>Nov 22 – Dec 21</p>
+                <span class="card-link">Explore Rashifal →</span>
+            </a>
+
+
+            <a href="{% url 'rashifal_detail' zodiac='capricorn' %}" class="zodiac-card">
+                <span class="zodiac-symbol">♑</span>
+                <h3>Capricorn <span>(मकर)</span></h3>
+                <p>Dec 22 – Jan 19</p>
+                <span class="card-link">Explore Rashifal →</span>
+            </a>
+
+
+            <a href="{% url 'rashifal_detail' zodiac='aquarius' %}" class="zodiac-card">
+                <span class="zodiac-symbol">♒</span>
+                <h3>Aquarius <span>(कुंभ)</span></h3>
+                <p>Jan 20 – Feb 18</p>
+                <span class="card-link">Explore Rashifal →</span>
+            </a>
+
+
+            <a href="{% url 'rashifal_detail' zodiac='pisces' %}" class="zodiac-card">
+                <span class="zodiac-symbol">♓</span>
+                <h3>Pisces <span>(मीन)</span></h3>
+                <p>Feb 19 – Mar 20</p>
+                <span class="card-link">Explore Rashifal →</span>
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ASTROLOGY SERVICES -->
+
+<section class="services-section">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <span class="section-label">
+                ✦ ASTROLOGY SERVICES ✦
+            </span>
+
+            <h2>
+                Guidance Written in the Stars
+            </h2>
+
+            <p>
+                Explore traditional Vedic astrology services
+                designed to help you understand your life's journey.
+            </p>
+
+        </div>
+
+
+        <div class="services-grid">
+
+            <div class="service-card">
+
+                <div class="service-icon">🔮</div>
+
+                <h3>Janam Kundli</h3>
+
+                <p>
+                    Understand your birth chart, planetary positions,
+                    strengths and important life patterns.
+                </p>
+
+                <a href="{% url 'janam_kundli' %}">
+                    Explore Kundli →
+                </a>
+
+            </div>
+
+
+            <div class="service-card">
+
+                <div class="service-icon">❤️</div>
+
+                <h3>Kundli Milan</h3>
+
+                <p>
+                    Explore traditional compatibility analysis
+                    for marriage and relationships.
+                </p>
+
+                <a href="{% url 'kundli_milan' %}">
+                    Check Compatibility →
+                </a>
+
+            </div>
+
+
+            <div class="service-card">
+
+                <div class="service-icon">💼</div>
+
+                <h3>Career Astrology</h3>
+
+                <p>
+                    Gain astrological insights into career,
+                    profession and important opportunities.
+                </p>
+
+                <a href="{% url 'career_astrology' %}">
+                    Explore Career →
+                </a>
+
+            </div>
+
+
+            <div class="service-card">
+
+                <div class="service-icon">💰</div>
+
+                <h3>Finance & Business</h3>
+
+                <p>
+                    Explore traditional astrological perspectives
+                    related to wealth and business decisions.
+                </p>
+
+                <a href="{% url 'finance_business' %}">
+                    Explore Finance →
+                </a>
+
+            </div>
+
+
+            <div class="service-card">
+
+                <div class="service-icon">🔢</div>
+
+                <h3>Numerology</h3>
+
+                <p>
+                    Discover the traditional significance associated
+                    with numbers and birth dates.
+                </p>
+
+                <a href="{% url 'numerology' %}">
+                    Explore Numerology →
+                </a>
+
+            </div>
+
+
+            <div class="service-card">
+
+                <div class="service-icon">💎</div>
+
+                <h3>Gemstone Guidance</h3>
+
+                <p>
+                    Learn about traditional gemstone associations
+                    with planets and astrological traditions.
+                </p>
+
+                <a href="{% url 'gemstone_guidance' %}">
+                    Explore Gemstones →
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ABOUT PANDIT JI -->
+
+<section class="about-section">
+
+    <div class="container about-wrapper">
+
+        <div class="about-image">
+
+            <div class="about-image-placeholder">
+
+                <span>ॐ</span>
+
+                <p>
+                    Acharya 
+                    Brijwasi Prasad Tiwari Ji Maharaj
+                </p>
+
+                <small>
+                    लाल मैदान वाले पंडित जी
+                </small>
+
+            </div>
+
+        </div>
+
+
+        <div class="about-content">
+
+            <span class="section-label">
+                ✦ ABOUT PANDIT JI ✦
+            </span>
+
+            <h2>
+                Acharya Brijwasi Prasad Tiwari Ji Maharaj
+            </h2>
+
+            <h3>
+                Astrologer • Spiritual Guide • Maa Durga Upasak
+            </h3>
+
+            <p>
+                Welcome to the official astrology platform of
+                Acharya Pandit Brijwasi Prasad Tiwari Ji Maharaj.
+            </p>
+
+            <p>
+                Known with श्रद्धा and respect as the
+                <strong>“Lal Maidan Wale Pandit Ji”</strong>,
+                Pandit Ji has been devoted to the worship and
+                service of <strong>Maa Durga Jagjanani Jagdamba</strong>
+                at Lal Maidan for around <strong>50 years</strong>.
+            </p>
+
+            <p>
+                Through years of spiritual practice, traditional
+                knowledge and experience, this platform brings
+                together Vedic Astrology, Jyotish guidance and
+                timeless spiritual wisdom.
+            </p>
+
+
+            <div class="about-highlights">
+
+                <div>
+                    <strong>🔮</strong>
+                    <span>Vedic Astrology</span>
+                </div>
+
+                <div>
+                    <strong>🪐</strong>
+                    <span>Kundli Analysis</span>
+                </div>
+
+                <div>
+                    <strong>🛕</strong>
+                    <span>50+ Years of Seva</span>
+                </div>
+
+            </div>
+
+
+            <a href="#" class="btn btn-primary">
+                Learn More About Pandit Ji
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- OFFICIAL YOUTUBE -->
+
+<section class="youtube-section">
+
+    <div class="container youtube-container">
+
+        <div class="youtube-content">
+
+            <span class="section-label">
+                ✦ OFFICIAL YOUTUBE ✦
+            </span>
+
+            <h2>
+                Connect With Pandit Ji
+            </h2>
+
+            <p>
+                Watch astrology guidance, spiritual content and
+                devotional videos from Acharya Pandit Brijwasi
+                Prasad Tiwari Ji Maharaj on his official YouTube channel.
+            </p>
+
+            <div class="youtube-button-wrapper">
+
+                <a
+                    href="https://www.youtube.com/channel/UCxqJ5pXU_4MVDlK5f5CIlxw"
+                    class="btn btn-primary"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    ▶ Visit Official YouTube Channel
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- PREMIUM ASTROLOGY -->
+
+
+<!-- PREMIUM ASTROLOGY -->
+
+<section class="premium-section">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <span class="section-label">
+                ✦ PREMIUM ASTROLOGY ✦
+            </span>
+
+            <h2>
+                Unlock Deeper Astrological Guidance
+            </h2>
+
+            <p>
+                Get detailed insights beyond the daily Rashifal
+                with our premium astrology services.
+            </p>
+
+        </div>
+
+
+        <div class="premium-grid">
+
+            <!-- PREMIUM RASHIFAL -->
+
+            <div class="premium-card">
+
+                <div class="premium-icon">
+                    🔮
+                </div>
+
+                <span class="premium-badge">
+                    PREMIUM
+                </span>
+
+                <h3>
+                    Premium Rashifal
+                </h3>
+
+                <p>
+                    Get detailed daily guidance covering
+                    career, love, finance, health and important
+                    planetary influences.
+                </p>
+
+                <div class="premium-price">
+                    ₹99 <span>/ month</span>
+                </div>
+
+                <a href="{% url 'premium_plans' %}" class="btn btn-primary">
+                    View Premium Plans
+                </a>
+
+            </div>
+
+
+            <!-- PREMIUM KUNDLI -->
+
+            <div class="premium-card featured">
+
+                <div class="premium-icon">
+                    🪐
+                </div>
+
+                <span class="premium-badge">
+                    MOST POPULAR
+                </span>
+
+                <h3>
+                    Premium Kundli
+                </h3>
+
+                <p>
+                    Explore a detailed birth-chart experience
+                    with planetary positions, houses and
+                    traditional astrological insights.
+                </p>
+
+                <div class="premium-price">
+                    ₹499 <span>/ report</span>
+                </div>
+
+                <a href="#" class="btn btn-primary">
+                    Get Your Kundli
+                </a>
+
+            </div>
+
+
+            <!-- PREMIUM CONSULTATION -->
+
+            <div class="premium-card">
+
+                <div class="premium-icon">
+                    🕉️
+                </div>
+
+                <span class="premium-badge">
+                    EXCLUSIVE
+                </span>
+
+                <h3>
+                    Pandit Ji Consultation
+                </h3>
+
+                <p>
+                    Request personalized astrological guidance
+                    based on your birth details and specific
+                    questions.
+                </p>
+
+                <div class="premium-price">
+                    ₹999 <span>/ consultation</span>
+                </div>
+
+                <a href="#" class="btn btn-primary">
+                    Consult Pandit Ji
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- DAILY DARSHAN -->
+
+<section class="darshan-section">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <span class="section-label">
+                ✦ DAILY DARSHAN ✦
+            </span>
+
+            <h2>
+                आज के दिव्य दर्शन
+            </h2>
+
+            <p>
+                भगवान के पावन दर्शन के साथ अपने दिन की शुरुआत
+                श्रद्धा और सकारात्मक ऊर्जा के साथ करें।
+            </p>
+
+        </div>
+
+
+        <div class="darshan-grid">
+
+            {% for darshan in daily_darshans %}
+
+                <div class="darshan-card">
+
+                    <!-- IMAGE -->
+
+                    {% if darshan.image %}
+
+                        <div class="darshan-image">
+
+                            <img
+                                src="{{ darshan.image.url }}"
+                                alt="{{ darshan.title }}"
+                            >
+
+                            <span class="darshan-category">
+                                {{ darshan.get_category_display }}
+                            </span>
+
+                        </div>
+
+                    {% endif %}
+
+
+                    <!-- CONTENT -->
+
+                    <div class="darshan-content">
+
+                        <span class="darshan-date">
+                            {{ darshan.date|date:"d F Y" }}
+                        </span>
+
+                        <h3>
+                            {{ darshan.title }}
+                        </h3>
+
+
+                        {% if darshan.description %}
+
+                            <p>
+                                {{ darshan.description|truncatewords:25 }}
+                            </p>
+
+                        {% endif %}
+
+
+                        <!-- YOUTUBE SHORT BUTTON-->
+
+{% if darshan.video %}
+
+    <div class="darshan-video">
+        <video controls playsinline preload="metadata">
+            <source src="{{ darshan.video.url }}" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+{% elif darshan.youtube_embed_url %}
+
+    <div class="darshan-video">
+        <iframe
+            src="{{ darshan.youtube_embed_url }}"
+            title="{{ darshan.title }}"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen>
+        </iframe>
+    </div>
+
+{% endif %}
+                    </div>
+
+                </div>
+
+            {% empty %}
+
+                <p>
+                    आज के दर्शन जल्द उपलब्ध होंगे।
+                </p>
+
+            {% endfor %}
+
+        </div>
+
+    </div>
+
+
+    {% if darshan.video %}
+    <div class="darshan-video">
+        <video controls playsinline preload="metadata">
+            <source src="{{ darshan.video.url }}" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+{% elif darshan.youtube_embed_url %}
+    <div class="darshan-video">
+        <iframe
+            src="{{ darshan.youtube_embed_url }}"
+            title="{{ darshan.title }}"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen>
+        </iframe>
+    </div>
+{% endif %}
+
+</section>
+
+<!-- DAILY HOROSCOPE -->
+
+<section class="horoscope-section">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <span class="section-label">
+                ✦ DAILY RASHIFAL ✦
+            </span>
+
+            <h2>
+                What Do the Stars Say Today?
+            </h2>
+
+            <p>
+                Explore today's general astrological guidance
+                for your zodiac sign.
+            </p>
+
+        </div>
+
+
+        <div class="horoscope-grid">
+
+            {% for horoscope in horoscopes %}
+
+                <div class="horoscope-card">
+
+                    <span class="horoscope-symbol">
+
+                        {% if horoscope.zodiac == "aries" %}♈
+                        {% elif horoscope.zodiac == "taurus" %}♉
+                        {% elif horoscope.zodiac == "gemini" %}♊
+                        {% elif horoscope.zodiac == "cancer" %}♋
+                        {% elif horoscope.zodiac == "leo" %}♌
+                        {% elif horoscope.zodiac == "virgo" %}♍
+                        {% elif horoscope.zodiac == "libra" %}♎
+                        {% elif horoscope.zodiac == "scorpio" %}♏
+                        {% elif horoscope.zodiac == "sagittarius" %}♐
+                        {% elif horoscope.zodiac == "capricorn" %}♑
+                        {% elif horoscope.zodiac == "aquarius" %}♒
+                        {% elif horoscope.zodiac == "pisces" %}♓
+                        {% endif %}
+
+                    </span>
+
+                    <h3>
+                        {{ horoscope.get_zodiac_display }}
+                    </h3>
+
+                    <p>
+                        {{ horoscope.prediction }}
+                    </p>
+
+                    <a href="{% url 'rashifal_detail' zodiac=horoscope.zodiac %}">
+                        Read Rashifal →
+                    </a>
+
+                </div>
+
+            {% empty %}
+
+                <p>
+                    Today's Rashifal will be available soon.
+                </p>
+
+            {% endfor %}
+
+        </div>
+
+
+        <div class="horoscope-button">
+
+            <a href="#" class="btn btn-secondary">
+                View All Zodiac Rashifal
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+{% endblock %}

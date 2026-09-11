@@ -1,0 +1,44 @@
+{% extends "astrology/base.html" %}
+
+{% block title %}
+Login | Pandit Brijwasi Prasad Tiwari
+{% endblock %}
+
+{% block content %}
+
+<section class="rashifal-detail">
+    <div class="container">
+
+        <span class="section-label">
+            ✦ LOGIN ✦
+        </span>
+
+        <h2>
+            Login to Your Account
+        </h2>
+
+        <form method="post">
+            {% csrf_token %}
+
+            {{ form.as_p }}
+
+            <button type="submit">
+                Login
+            </button>
+        </form>
+
+        <p style="margin-top:25px;">
+    Don't have an account?
+</p>
+
+<a
+    href="{% url 'register' %}"
+    class="btn btn-secondary"
+>
+    Create Account →
+</a>
+
+    </div>
+</section>
+
+{% endblock %}

@@ -1,0 +1,133 @@
+{% extends "astrology/base.html" %}
+
+{% block title %}
+Janam Kundli | Pandit Brijwasi Prasad Tiwari
+{% endblock %}
+
+{% block content %}
+
+<section class="rashifal-detail">
+
+    <div class="container">
+
+        <span class="section-label">
+            ✦ JANAM KUNDLI ✦
+        </span>
+
+        <h2>
+            🔮 Janam Kundli
+        </h2>
+
+        <p>
+            Understand your birth chart, planetary positions,
+            strengths and important life patterns through
+            traditional Vedic astrology.
+        </p>
+
+        <div class="premium-card">
+
+            <h3>
+                ✦ Kundli Guidance ✦
+            </h3>
+
+            <p>
+                Enter your birth details to explore your
+                Janam Kundli and receive traditional
+                astrological guidance.
+            </p>
+
+            <div class="kundli-form">
+
+                <form method="POST">
+
+                    {% csrf_token %}
+
+                    <div class="form-group">
+
+                        <label for="birth_date">
+                            Birth Date
+                        </label>
+
+                        <input
+                            type="date"
+                            id="birth_date"
+                            name="birth_date"
+                            required
+                        >
+
+                    </div>
+
+                    <div class="form-group">
+
+                        <label for="birth_time">
+                            Birth Time
+                        </label>
+
+                        <input
+                            type="time"
+                            id="birth_time"
+                            name="birth_time"
+                            required
+                        >
+
+                    </div>
+
+                    <div class="form-group">
+
+                        <label for="birth_place">
+                            Birth Place
+                        </label>
+
+                        <input
+                            type="text"
+                            id="birth_place"
+                            name="birth_place"
+                            placeholder="Enter your birth place"
+                            required
+                        >
+
+                    </div>
+
+                    <button
+                        type="submit"
+                        class="premium-button"
+                    >
+                        🔮 Generate Janam Kundli
+                    </button>
+
+                </form>
+
+            </div>
+
+        </div>
+
+        <div class="premium-card">
+
+            <h3>
+                ✨ Detailed Astrology Guidance
+            </h3>
+
+            <p>
+                Get deeper insights into planetary positions,
+                career, finance, relationships and important
+                life patterns.
+            </p>
+
+            <a
+                href="{% url 'premium_plans' %}"
+                class="premium-button"
+            >
+                ✨ Unlock Premium Guidance
+            </a>
+
+        </div>
+
+        <a href="{% url 'home' %}" class="back-link">
+            ← Back to Home
+        </a>
+
+    </div>
+
+</section>
+
+{% endblock %}

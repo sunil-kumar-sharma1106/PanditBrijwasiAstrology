@@ -1,0 +1,93 @@
+{% extends "astrology/base.html" %}
+
+{% block title %}
+Janam Kundli Result | Pandit Brijwasi Prasad Tiwari
+{% endblock %}
+
+{% block content %}
+
+<section class="rashifal-detail">
+
+    <div class="container">
+
+        <span class="section-label">
+            ✦ JANAM KUNDLI RESULT ✦
+        </span>
+
+        <h2>
+            🔮 Your Janam Kundli
+        </h2>
+
+        <p>
+            Your birth details have been successfully received.
+        </p>
+
+        <div class="premium-card">
+
+            <h3>
+                ✦ Birth Details ✦
+            </h3>
+
+            <div class="kundli-result">
+
+                <p>
+                    <strong>Birth Date:</strong>
+                    {{ birth_date }}
+                </p>
+
+                <p>
+                    <strong>Birth Time:</strong>
+                    {{ birth_time }}
+                </p>
+
+                <p>
+                    <strong>Birth Place:</strong>
+                    {{ birth_place }}
+                </p>
+
+            </div>
+
+        </div>
+
+        <div class="premium-card">
+
+            <h3>
+                ✨ Detailed Kundli Analysis
+            </h3>
+
+            <p>
+                Your detailed planetary positions, houses,
+                Nakshatra and traditional Vedic astrology
+                analysis will appear here.
+            </p>
+
+            <a
+                href="{% url 'premium_plans' %}"
+                class="premium-button"
+            >
+                ✨ Unlock Detailed Kundli
+            </a>
+
+        </div>
+
+        <a
+            href="{% url 'janam_kundli' %}"
+            class="back-link"
+        >
+            ← Generate Another Kundli
+        </a>
+
+        <br>
+
+        <a
+            href="{% url 'home' %}"
+            class="back-link"
+        >
+            ← Back to Home
+        </a>
+
+    </div>
+
+</section>
+
+{% endblock %}

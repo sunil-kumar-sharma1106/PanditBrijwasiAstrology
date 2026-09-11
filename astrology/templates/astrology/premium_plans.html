@@ -1,0 +1,124 @@
+{% extends "astrology/base.html" %}
+
+{% block title %}
+Premium Astrology | Pandit Brijwasi Prasad Tiwari
+{% endblock %}
+
+{% block content %}
+
+<section class="premium-section">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <span class="section-label">
+                ✦ PREMIUM ASTROLOGY ✦
+            </span>
+
+            <h2>
+                Unlock Your Cosmic Guidance
+            </h2>
+
+            <p>
+                Choose a premium plan and explore deeper
+                astrological insights and guidance.
+            </p>
+
+        </div>
+
+
+        <div class="premium-grid">
+
+            {% for plan in plans %}
+
+            <div class="premium-card {% if plan.popular %}popular{% endif %}">
+
+                {% if plan.popular %}
+                    <div class="popular-badge">
+                        ⭐ MOST POPULAR
+                    </div>
+                {% endif %}
+
+
+                <div class="premium-icon">
+                    {% if plan.name == "7 Days" %}
+                        🌙
+                    {% elif plan.name == "1 Month" %}
+                        ⭐
+                    {% elif plan.name == "3 Months" %}
+                        👑
+                    {% else %}
+                        💎
+                    {% endif %}
+                </div>
+
+
+                <h3>
+                    {{ plan.name }}
+                </h3>
+
+
+                <div class="premium-price">
+
+                    <span class="currency">₹</span>
+
+                    <span class="amount">
+                        {{ plan.price }}
+                    </span>
+
+                </div>
+
+
+                <p class="premium-description">
+                    {{ plan.description }}
+                </p>
+
+
+                <ul class="premium-features">
+
+                    {% for feature in plan.features %}
+
+                    <li>
+                        <span>✓</span>
+                        {{ feature }}
+                    </li>
+
+                    {% endfor %}
+
+                </ul>
+
+
+                <a
+    href="{% url 'premium_checkout' plan=plan.id %}"
+    class="btn btn-primary premium-btn"
+>
+    Subscribe Now →
+</a>
+
+            </div>
+
+            {% endfor %}
+
+        </div>
+
+
+        <div class="premium-note">
+
+            🔒 Secure payment & premium access
+
+            <span>•</span>
+
+            Cancel anytime
+
+            <span>•</span>
+
+            Instant activation after payment
+
+        </div>
+
+    </div>
+
+</section>
+
+{% endblock %}

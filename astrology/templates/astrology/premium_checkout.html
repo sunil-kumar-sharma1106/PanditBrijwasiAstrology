@@ -1,0 +1,64 @@
+{% extends "astrology/base.html" %}
+
+{% block title %}
+Premium Checkout | Pandit Brijwasi Prasad Tiwari
+{% endblock %}
+
+{% block content %}
+
+<section class="rashifal-detail">
+
+    <div class="container">
+
+        <span class="section-label">
+            ✦ PREMIUM CHECKOUT ✦
+        </span>
+
+        <h2>
+            {{ selected_plan.name }}
+        </h2>
+
+        <div class="rashifal-content">
+
+            <p>
+                You selected the
+                <strong>{{ selected_plan.name }}</strong>
+                Premium Astrology Plan.
+            </p>
+
+            <h3 style="color:#d4af37; margin:25px 0;">
+                ₹{{ selected_plan.price }}
+            </h3>
+
+            <p>
+                Your subscription has been created and is currently
+                <strong>Pending</strong>.
+            </p>
+
+            <p style="margin-top:15px;">
+                Complete the payment to activate your premium access.
+            </p>
+
+            <a
+                href="{% url 'premium_payment' subscription.id %}"
+                class="btn btn-primary"
+            >
+                Proceed to Payment →
+            </a>
+
+            <br>
+
+            <a
+                href="{% url 'premium_plans' %}"
+                class="btn btn-secondary"
+            >
+                ← Back to Plans
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+{% endblock %}

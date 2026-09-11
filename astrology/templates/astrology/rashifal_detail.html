@@ -1,0 +1,118 @@
+{% extends "astrology/base.html" %}
+
+{% block title %}
+Rashifal | Pandit Brijwasi Prasad Tiwari
+{% endblock %}
+
+{% block content %}
+
+<section class="rashifal-detail">
+
+    <div class="container">
+
+        {% if horoscope %}
+
+            <span class="section-label">
+                ✦ TODAY'S RASHIFAL ✦
+            </span>
+
+            <h2>
+                {{ horoscope.get_zodiac_display }}
+            </h2>
+
+            <!-- FREE RASHIFAL -->
+            <div class="rashifal-content">
+
+                <h3>
+                    🔮 Today's Prediction
+                </h3>
+
+                <p>
+                    {{ horoscope.prediction }}
+                </p>
+
+                <p class="rashifal-date">
+                    Horoscope for {{ horoscope.date }}
+                </p>
+
+            </div>
+
+
+            <!-- PREMIUM SECTION -->
+            <div class="premium-section">
+
+                {% if premium_active %}
+
+                    <span class="section-label">
+                        ✦ PREMIUM ASTROLOGY GUIDANCE ✦
+                    </span>
+
+                    <h3>
+                        ✨ Detailed Premium Prediction
+                    </h3>
+
+                    <div class="rashifal-content">
+
+                        {% if horoscope.premium_prediction %}
+
+                            <p>
+                                {{ horoscope.premium_prediction }}
+                            </p>
+
+                        {% else %}
+
+                            <p>
+                                Premium guidance for today's
+                                horoscope will be available soon.
+                            </p>
+
+                        {% endif %}
+
+                    </div>
+
+                {% else %}
+
+                    <span class="section-label">
+                        ✦ PREMIUM CONTENT ✦
+                    </span>
+
+                    <h3>
+                        🔒 Unlock Detailed Astrology Guidance
+                    </h3>
+
+                    <p>
+                        Get deeper insights into your career,
+                        finance, relationships and future with
+                        Premium Astrology Guidance.
+                    </p>
+
+                    <a href="{% url 'premium_plans' %}" class="btn">
+                        ✨ Unlock Premium
+                    </a>
+
+                {% endif %}
+
+            </div>
+
+        {% else %}
+
+            <h2>
+                Rashifal Not Available
+            </h2>
+
+            <p>
+                Today's horoscope for this zodiac sign
+                will be available soon.
+            </p>
+
+        {% endif %}
+
+        <a href="/" class="btn btn-secondary">
+            ← Back to Home
+        </a>
+
+    </div>
+
+</section>
+
+{% endblock %}

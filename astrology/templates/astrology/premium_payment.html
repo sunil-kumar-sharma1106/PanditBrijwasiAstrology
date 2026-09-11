@@ -1,0 +1,194 @@
+{% extends "astrology/base.html" %}
+
+{% block title %}
+Secure Payment | Pandit Brijwasi Prasad Tiwari
+{% endblock %}
+
+{% block content %}
+
+<section class="rashifal-detail">
+
+    <div class="container">
+
+        <span class="section-label">
+            ✦ SECURE PREMIUM PAYMENT ✦
+        </span>
+
+        <h2>
+            Complete Your Subscription
+        </h2>
+
+        <div class="rashifal-content">
+
+            <p>
+                Premium Plan:
+                <strong>
+                    {{ subscription.get_plan_display }}
+                </strong>
+            </p>
+
+            <p style="margin-top:12px;">
+                Amount:
+                <strong style="color:#d4af37;">
+                    ₹{{ subscription.amount }}
+                </strong>
+            </p>
+
+            <p style="margin-top:12px;">
+                Payment Status:
+                <strong>
+                    {{ subscription.get_payment_status_display }}
+                </strong>
+            </p>
+
+            <button
+                id="rzp-button"
+                class="btn btn-primary"
+                style="margin-top:30px; border:none; cursor:pointer;"
+            >
+                💳 Pay ₹{{ subscription.amount }} Securely
+            </button>
+
+            <p
+                id="payment-message"
+                style="margin-top:20px; font-size:14px;"
+            ></p>
+
+            <p style="margin-top:20px; font-size:13px;">
+                🔐 Secure payment powered by Razorpay
+            </p>
+
+            <a
+                href="{% url 'premium_plans' %}"
+                class="btn btn-secondary"
+                style="display:inline-block; margin-top:20px;"
+            >
+                ← Back to Premium Plans
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+
+<script>
+
+const options = {
+
+    key: "{{ razorpay_key_id }}",
+
+    amount: "{{ subscription.amount|floatformat:0 }}00",
+
+    currency: "INR",
+
+    name: "Pandit Brijwasi Prasad Tiwari",
+
+    description:
+        "{{ subscription.get_plan_display }} Premium Subscription",
+
+    order_id: "{{ razorpay_order_id }}",
+
+    handler: function(response) {
+
+        const message =
+            document.getElementById("payment-message");
+
+        message.innerText =
+            "🔐 Verifying your payment...";
+
+        const formData = new FormData();
+
+        formData.append(
+            "razorpay_payment_id",
+            response.razorpay_payment_id
+        );
+
+        formData.append(
+            "razorpay_order_id",
+            response.razorpay_order_id
+        );
+
+        formData.append(
+            "razorpay_signature",
+            response.razorpay_signature
+        );
+
+        fetch(
+            "{% url 'premium_verify_payment' subscription_id=subscription.id %}",
+            {
+                method: "POST",
+
+                headers: {
+                    "X-CSRFToken": "{{ csrf_token }}"
+                },
+
+                body: formData
+            }
+        )
+        .then(response => response.json())
+
+        .then(data => {
+
+            if (data.success) {
+
+                message.innerText =
+                    "✅ Payment verified successfully. Redirecting...";
+
+                window.location.href =
+                    data.redirect_url;
+
+            } else {
+
+                message.innerText =
+                    "❌ " + data.message;
+
+            }
+
+        })
+
+        .catch(error => {
+
+            console.error(error);
+
+            message.innerText =
+                "❌ Unable to verify payment. Please contact support.";
+
+        });
+
+    },
+
+    modal: {
+
+        ondismiss: function() {
+
+            document.getElementById(
+                "payment-message"
+            ).innerText =
+                "Payment window closed.";
+
+        }
+
+    },
+
+    theme: {
+        color: "#d4af37"
+    }
+
+};
+
+const razorpay = new Razorpay(options);
+
+document.getElementById("rzp-button").onclick = function(event) {
+
+    event.preventDefault();
+
+    razorpay.open();
+
+};
+
+</script>
+
+{% endblock %}

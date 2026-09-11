@@ -1,0 +1,154 @@
+{% extends "astrology/base.html" %}
+
+{% block title %}
+Kundli Milan | Pandit Brijwasi Prasad Tiwari
+{% endblock %}
+
+{% block content %}
+
+<section class="rashifal-detail">
+
+    <div class="container">
+
+        <span class="section-label">
+            ✦ KUNDLI MILAN ✦
+        </span>
+
+        <h2>
+            ❤️ Kundli Milan
+        </h2>
+
+        <p>
+            Explore traditional Vedic compatibility analysis
+            for marriage and relationships.
+        </p>
+
+        <div class="premium-card">
+
+            <h3>
+                ❤️ Compatibility Guidance
+            </h3>
+
+            <p>
+                Enter the birth details of both individuals
+                to explore traditional Kundli Milan insights.
+            </p>
+
+            <div class="kundli-form">
+
+                <h4>Person 1</h4>
+
+                <div class="form-group">
+                    <label for="person1_date">
+                        Birth Date
+                    </label>
+
+                    <input
+                        type="date"
+                        id="person1_date"
+                        name="person1_date"
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="person1_time">
+                        Birth Time
+                    </label>
+
+                    <input
+                        type="time"
+                        id="person1_time"
+                        name="person1_time"
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="person1_place">
+                        Birth Place
+                    </label>
+
+                    <input
+                        type="text"
+                        id="person1_place"
+                        name="person1_place"
+                        placeholder="Enter birth place"
+                    >
+                </div>
+
+                <h4>Person 2</h4>
+
+                <div class="form-group">
+                    <label for="person2_date">
+                        Birth Date
+                    </label>
+
+                    <input
+                        type="date"
+                        id="person2_date"
+                        name="person2_date"
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="person2_time">
+                        Birth Time
+                    </label>
+
+                    <input
+                        type="time"
+                        id="person2_time"
+                        name="person2_time"
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="person2_place">
+                        Birth Place
+                    </label>
+
+                    <input
+                        type="text"
+                        id="person2_place"
+                        name="person2_place"
+                        placeholder="Enter birth place"
+                    >
+                </div>
+
+                <button type="button" class="premium-button">
+                    ❤️ Check Compatibility
+                </button>
+
+            </div>
+
+        </div>
+
+        <div class="premium-card">
+
+            <h3>
+                ✨ Detailed Compatibility Analysis
+            </h3>
+
+            <p>
+                Get deeper traditional astrological insights
+                regarding compatibility, relationships and
+                marriage prospects.
+            </p>
+
+            <a
+                href="{% url 'premium_plans' %}"
+                class="premium-button"
+            >
+                ✨ Unlock Premium Guidance
+            </a>
+
+        </div>
+
+        <a href="{% url 'home' %}" class="back-link">
+            ← Back to Home
+        </a>
+
+    </div>
+
+</section>
+
+{% endblock %}

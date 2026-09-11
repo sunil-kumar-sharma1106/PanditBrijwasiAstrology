@@ -1,0 +1,78 @@
+{% extends "astrology/base.html" %}
+
+{% block title %}
+Payment Successful | Pandit Brijwasi Prasad Tiwari
+{% endblock %}
+
+{% block content %}
+
+<section class="rashifal-detail">
+
+    <div class="container">
+
+        <span class="section-label">
+            ✦ PAYMENT SUCCESSFUL ✦
+        </span>
+
+        <h2>
+            🎉 Premium Activated!
+        </h2>
+
+        <div class="rashifal-content">
+
+            <p>
+                Thank you,
+                <strong>{{ subscription.user.username }}</strong>.
+            </p>
+
+            <p style="margin-top:15px;">
+                Your
+                <strong>
+                    {{ subscription.get_plan_display }}
+                </strong>
+                Premium Astrology subscription is now active.
+            </p>
+
+            <p style="margin-top:15px;">
+                Amount Paid:
+                <strong style="color:#d4af37;">
+                    ₹{{ subscription.amount }}
+                </strong>
+            </p>
+
+            {% if subscription.transaction_id %}
+                <p style="margin-top:15px;">
+                    Transaction ID:
+                    <strong>
+                        {{ subscription.transaction_id }}
+                    </strong>
+                </p>
+            {% endif %}
+
+            <p style="margin-top:20px;">
+                🔮 Your premium astrology access is ready.
+            </p>
+
+            <a
+                href="{% url 'home' %}"
+                class="btn btn-primary"
+                style="margin-top:30px;"
+            >
+                🏠 Go to Home
+            </a>
+
+            <a
+                href="{% url 'premium_plans' %}"
+                class="btn btn-secondary"
+                style="margin-top:15px;"
+            >
+                View Premium Plans
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+{% endblock %}

@@ -1,0 +1,84 @@
+{% extends "astrology/base.html" %}
+
+{% block title %}
+Dashboard | Pandit Brijwasi Prasad Tiwari
+{% endblock %}
+
+{% block content %}
+
+<section class="rashifal-detail">
+
+    <div class="container">
+
+        <span class="section-label">
+            ✦ MY DASHBOARD ✦
+        </span>
+
+        <h2>
+            Welcome, {{ user.username }} 👋
+        </h2>
+
+        {% if active_subscription %}
+
+            <div class="rashifal-content">
+
+                <h3>
+                    ✨ Premium Status: ACTIVE
+                </h3>
+
+                <p>
+                    <strong>Plan:</strong>
+                    {{ active_subscription.get_plan_display }}
+                </p>
+
+                <p>
+                    <strong>Amount:</strong>
+                    ₹{{ active_subscription.amount }}
+                </p>
+
+                <p>
+                    <strong>Start Date:</strong>
+                    {{ active_subscription.start_date|date:"d M Y, h:i A" }}
+                </p>
+
+                <p>
+                    <strong>Expiry Date:</strong>
+                    {{ active_subscription.expiry_date|date:"d M Y, h:i A" }}
+                </p>
+
+                <p>
+                    <strong>Transaction ID:</strong>
+                    {{ active_subscription.transaction_id }}
+                </p>
+
+            </div>
+
+            <a href="{% url 'home' %}" class="btn">
+                🔮 View Rashifal
+            </a>
+
+        {% else %}
+
+            <div class="rashifal-content">
+
+                <h3>
+                    Premium Status: INACTIVE
+                </h3>
+
+                <p>
+                    You don't have an active premium subscription.
+                </p>
+
+            </div>
+
+            <a href="{% url 'premium_plans' %}" class="btn">
+                ✨ Get Premium
+            </a>
+
+        {% endif %}
+
+    </div>
+
+</section>
+
+{% endblock %}
